@@ -46,6 +46,7 @@ namespace Bakery.Models
       Title = title;
       Description = description;
       _instances.Add(this);
-      Id = _instances.Count;
+      // Id = _instances.Count;
     }
+  }
 }
