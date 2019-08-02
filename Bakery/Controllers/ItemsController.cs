@@ -4,49 +4,49 @@ using System.Collections.Generic;
 
 namespace Bakery.Controllers
 {
-  public class BakeryController : Controller
+  public class ItemsController : Controller
   {
 
-    [HttpGet("/bakery")]
+    [HttpGet("/bakerypages")]
     public ActionResult Index()
     {
-      List<Bakery> allBakery = Bakery.GetAll();
-      return View(allBakery);
+      List<Vendor> allVendor = Vendor.GetAll();
+      return View(allVendor);
     }
 
-    [HttpGet("/bakery/new")]
+    [HttpGet("/bakerypages/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/bakery")]
+    [HttpPost("/bakerypages")]
     public ActionResult Create(string city, string description)
     {
-      Bakery myBakery = new Bakery(city, description);
+      Vendor myVendor = new Vendor(city, description);
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/bakery/delete")]
+    [HttpPost("/bakerypages/delete")]
     public ActionResult DeleteAll()
     {
-      Bakery.ClearAll();
+      Vendor.ClearAll();
       return View();
     }
 
-    [HttpGet("/bakery/{id}")]
+    [HttpGet("/bakerypages/{id}")]
     public ActionResult Show(int id)
     {
-      Bakery foundBakery = Bakery.Find(id);
-      return View(foundBakery);
+      Vendor foundVendor = Vendor.Find(id);
+      return View(foundVendor);
     }
 
-    [HttpGet("/bakery/newest")]
+    [HttpGet("/bakerypages/newest")]
     public ActionResult Newest()
     {
       return View();
     }
-    [HttpGet("/bakery/deeper")]
+    [HttpGet("/bakerypages/deeper")]
     public ActionResult DeeperDungeonHole()
     {
       return View();

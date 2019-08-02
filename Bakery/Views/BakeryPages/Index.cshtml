@@ -6,9 +6,9 @@
   <p>You have no vendors! So sad :(</p>
 }
 <ul>
-  @foreach (Place place in Model)
+  @foreach (Vendor vendor in Model)
   {
-    <li><a href='/bakerypages/@bakerypages.Id'>@place.CityName</a></li>
+    <li><a href='/bakerypages/@vendor.Id'>@vendor.CityName</a></li>
   }
 </ul>
 
