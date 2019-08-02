@@ -4,49 +4,49 @@ using System.Collections.Generic;
 
 namespace Bakery.Controllers
 {
-  public class ItemsController : Controller
+  public class VendorsController : Controller
   {
 
-    [HttpGet("/bakerypages")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Vendor> allVendor = Vendor.GetAll();
-      return View(allVendor);
+      List<Vendor> allVendors = Vendor.GetAll();
+      return View(allVendors);
     }
 
-    [HttpGet("/bakerypages/new")]
+    [HttpGet("/vendors/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/bakerypages")]
+    [HttpPost("/vendors")]
     public ActionResult Create(string city, string description)
     {
       Vendor myVendor = new Vendor(city, description);
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/bakerypages/delete")]
+    [HttpPost("/vendors/delete")]
     public ActionResult DeleteAll()
     {
       Vendor.ClearAll();
       return View();
     }
 
-    [HttpGet("/bakerypages/{id}")]
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Vendor foundVendor = Vendor.Find(id);
       return View(foundVendor);
     }
 
-    [HttpGet("/bakerypages/newest")]
+    [HttpGet("/vendors/newest")]
     public ActionResult Newest()
     {
       return View();
     }
-    [HttpGet("/bakerypages/deeper")]
+    [HttpGet("/vendors/deeper")]
     public ActionResult DeeperDungeonHole()
     {
       return View();
