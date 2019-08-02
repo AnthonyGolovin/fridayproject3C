@@ -1,15 +1,15 @@
 using System.Collections.Generic;
 
-namespace Travel.Models
+namespace Bakery.Models
 {
-  public class Place
+  public class Vendor
   {
     public string CityName { get; set; }
     public string Description { get; set; }
     public int Id { get; }
-    private static List<Place> _instances = new List<Place> {};
+    private static List<Vendor> _instances = new List<Vendor> {};
 
-    public Place (string cityName, string description)
+    public Vendor (string cityName, string description)
     {
       CityName = cityName;
       Description = description;
@@ -17,7 +17,7 @@ namespace Travel.Models
       Id = _instances.Count;
     }
 
-    public static List<Place> GetAll()
+    public static List<Vendor> GetAll()
     {
       return _instances;
     }
@@ -27,7 +27,7 @@ namespace Travel.Models
       _instances.Clear();
     }
 
-    public static Place Find(int searchId)
+    public static Vendor Find(int searchId)
     {
       return _instances[searchId-1];
     }

@@ -1,52 +1,52 @@
 using Microsoft.AspNetCore.Mvc;
-using Travel.Models;
+using Bakery.Models;
 using System.Collections.Generic;
 
-namespace Travel.Controllers
+namespace Bakery.Controllers
 {
-  public class PlacesController : Controller
+  public class BakeryController : Controller
   {
 
-    [HttpGet("/places")]
+    [HttpGet("/bakery")]
     public ActionResult Index()
     {
-      List<Place> allPlaces = Place.GetAll();
-      return View(allPlaces);
+      List<Bakery> allBakery = Bakery.GetAll();
+      return View(allBakery);
     }
 
-    [HttpGet("/places/new")]
+    [HttpGet("/bakery/new")]
     public ActionResult New()
     {
       return View();
     }
 
-    [HttpPost("/places")]
+    [HttpPost("/bakery")]
     public ActionResult Create(string city, string description)
     {
-      Place myPlace = new Place(city, description);
+      Bakery myBakery = new Bakery(city, description);
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/places/delete")]
+    [HttpPost("/bakery/delete")]
     public ActionResult DeleteAll()
     {
-      Place.ClearAll();
+      Bakery.ClearAll();
       return View();
     }
 
-    [HttpGet("/places/{id}")]
+    [HttpGet("/bakery/{id}")]
     public ActionResult Show(int id)
     {
-      Place foundPlace = Place.Find(id);
-      return View(foundPlace);
+      Bakery foundBakery = Bakery.Find(id);
+      return View(foundBakery);
     }
 
-    [HttpGet("/places/newest")]
+    [HttpGet("/bakery/newest")]
     public ActionResult Newest()
     {
       return View();
     }
-    [HttpGet("/places/deeper")]
+    [HttpGet("/bakery/deeper")]
     public ActionResult DeeperDungeonHole()
     {
       return View();
