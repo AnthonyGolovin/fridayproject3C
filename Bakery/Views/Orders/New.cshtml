@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Welcome!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+     <div class="jumbotron" id="addVendor">
+      <h1>Add vendor orders:</h1>
+      <form action="/vendors" method="post">
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text">
+        <label for="description">Order details</label>
+        <input id="description" name="description" type="text">
+        <label for="price">Price</label>
+        <input id="price" name="price" type="text">
+        <label for="date">Date</label>
+        <input id="date" name="date" type="text">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
