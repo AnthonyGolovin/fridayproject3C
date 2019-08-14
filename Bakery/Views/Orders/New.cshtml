@@ -7,8 +7,8 @@
   </head>
   <body>
      <div class="jumbotron" id="addVendor">
-      <h1>Add vendor orders:</h1>
-      <form action="/vendors" method="post">
+      <h1>Add vendor order to @Model.VendorName:</h1>
+      <form action="/vendors/@Model.Id/orders" method="post">
         <label for="title">Title:</label>
         <input id="title" name="title" type="text">
         <label for="description">Order details</label>

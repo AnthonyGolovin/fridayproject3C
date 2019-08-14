@@ -44,12 +44,7 @@ namespace Bakery.Controllers
       model.Add("orders", vendorOrder);
       return View(model);
     }
-
-    [HttpGet("/vendors/newest")]
-    public ActionResult Newest()
-    {
-      return View();
-    }
+    
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Create(int vendorId, string title, string description, int price, string date)
     {
